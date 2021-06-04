@@ -1,5 +1,10 @@
-FROM golang:latest AS builder
-RUN apt-get update
+FROM golang:latest
+RUN mkdir /build
+WORKDIR /build
+
+RUN export GO111MODULE=on
+RUN go get https://github.com/harrycoa/apiMatriz/main
+
 ENV GO111MODULE=on \
     CGO_ENABLED=0 \
     GOOS=linux \
