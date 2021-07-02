@@ -10,10 +10,37 @@ En base a ello, se requiere implementar un backend con un API Rest (Golang) que 
 Se evaluará el correcto funcionamiento del API según las especificaciones siendo eficiente y usando las mejores prácticas de desarrollo. Enviar la solución completa (como zip o la URL del repo) y un ejemplo de ejecución.
 
 
+POSTMAN
+METODO POST
+
+URL: http://localhost:8090/matriz
+
+BODY: 
+
+{
+    "Matriz": [
+        [1,2,3],
+        [4,5,6],
+        [7,8,9]
+    ]
+}
 
 
 Ejemplo 1
 
 Input: [ [1,2], [3,4] ]
 Output: [ [2,4], [1,3] ]
+
+Ejemplo 2
+Input: [ [1,2,3], [4,5,6], [7,8,9] ]
+Output: [ [3,6,9], [2,5,8], [1,4,7] ]
+
+
+
+
+Instrucciones Docker
+
+docker  build -t apimatriz .
+go mod tidy
+docker run -it --rm --name godocker apimatriz
 
